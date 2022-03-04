@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
-	@Bean
+	@Bean// instance of class //objects
 	public Visitor createVisitor(){
 		return new AmarilloVisitor();
 	}
