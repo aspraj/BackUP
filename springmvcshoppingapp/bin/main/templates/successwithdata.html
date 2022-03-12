@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Successfully added customer</title>
+</head>
+<body>
+	
+	<form  th:object="${customer}" method="post">
+		<p>Customer Name : <input type="text" th:field="*{customerName}"/></p>
+		<p><input type="submit" value="Submit"/></p>
+	</form>
+		<div>
+	
+		<span th:text="${custData.customerId}" /> --<span th:text="${custData.customerName}" />
+	</div>
+</body>
+</html>

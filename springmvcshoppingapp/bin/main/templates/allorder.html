@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>All Order</title>
+</head>
+<body>
+	<div th:each="emp: ${listOfOrder}">
+		<span th:text="${ord.orderId}"/> --<span th:text="${ord.orderName}"/>
+	</div>
+</body>
+</html>

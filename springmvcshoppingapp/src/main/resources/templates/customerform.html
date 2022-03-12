@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Form</title>
+</head>
+<body>
+<!-- we use *  to POST data and  $ to GET data i.e. *{varName} & i${varName}  -->
+	<form action="#" th:action="@{/savecustomer}" th:object="${customer}" method="post">
+		<p>Customer Name : <input type="text" th:field="*{customerName}"/></p>
+		<p><input type="submit" value="Submit"/></p>
+	</form>
+	
+</body>
+</html>
