@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Successfully added employee</title>
+</head>
+<body>
+	
+	<form  th:object="${employee}" method="post">
+		<p>Emp Name : <input type="text" th:field="*{empName}"/></p>
+		<p><input type="submit" value="Submit"/></p>
+	</form>
+		<div>
+	
+		<span th:text="${emplData.empId}" /> --<span th:text="${emplData.empName}" />
+	</div>
+</body>
+</html>
