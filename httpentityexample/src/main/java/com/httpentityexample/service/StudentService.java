@@ -12,7 +12,7 @@ public interface StudentService {
 
 		public List<Student> retrieveAllStudent();
 		
-		public Student createStudentDetail(Student student);
+		public Student addStudent(Student student);
 		
 		public Student retrieveStudentById(Integer studentId) throws StudentNotFoundException;
 		

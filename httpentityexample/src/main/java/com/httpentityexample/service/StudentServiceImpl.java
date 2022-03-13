@@ -24,9 +24,8 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public Student createStudentDetail(Student newStudent) {
+	public Student addStudent(Student newStudent) {
 		return studentRepository.save(newStudent);
-
 	}
 
 	@Override
@@ -43,15 +42,14 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public Student updateStudentDetails(Student newStudent, Integer studentId) {
-			 return studentRepository.findById(studentId).map
-					 (student -> {student.setStudentName(newStudent.getStudentName());
-				        student.setDateOfBirth(newStudent.getDateOfBirth());
-				        student.setCourseEnrolled(newStudent.getCourseEnrolled());
-				        return studentRepository.save(student);
-				      })
-				      .orElseGet(() -> {
-				        newStudent.setStudentId(studentId);
-				        return studentRepository.save(newStudent);
-				      });
+		return studentRepository.findById(studentId).map(student -> {
+			student.setStudentName(newStudent.getStudentName());
+			student.setDateOfBirth(newStudent.getDateOfBirth());
+			student.setCourseEnrolled(newStudent.getCourseEnrolled());
+			return studentRepository.save(student);
+		}).orElseGet(() -> {
+			newStudent.setStudentId(studentId);
+			return studentRepository.save(newStudent);
+		});
 	}
 }

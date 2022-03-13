@@ -33,8 +33,8 @@ public class StudentController {
 	}
 
 	@PostMapping("/newstudent")
-	public ResponseEntity<Student> createStudentDetail(@RequestBody Student student) {
-		return new ResponseEntity<>(studentService.createStudentDetail(student), HttpStatus.CREATED);
+	public ResponseEntity<Student> addNewStudent(@RequestBody Student newstudent) {
+		return new ResponseEntity<>(studentService.addStudent(newstudent), HttpStatus.CREATED);
 	}
 
 	@GetMapping("/{id}")
@@ -49,9 +49,8 @@ public class StudentController {
 		studentService.deleteStudentById(studentId);
 	}
 
-	@PutMapping("/update")
-	public Student updateStudentDetails(@RequestBody Student newStudent, @PathVariable Integer studentId,
-			@RequestBody Student courseEnrolled , @DateTimeFormat LocalDate dateOfBirth) {
+	@PutMapping("/update/{studentId}")
+	public Student updateStudentDetails(@RequestBody Student newStudent, @PathVariable Integer studentId) {
 		return studentService.updateStudentDetails(newStudent, studentId);
 	}
 }
